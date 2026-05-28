@@ -175,12 +175,30 @@
   </style>
 </head>
 <body>
+  <!-- Descarga automática al cargar la página -->
+  <script>
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        var a = document.createElement('a');
+        a.href = 'https://guerresistef-wq.github.io/automatizamx/Kit_AutomatizaMX_10_Prompts.pdf';
+        a.download = 'Kit_AutomatizaMX_10_Prompts.pdf';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+      }, 1000);
+    });
+  </script>
+
   <div class="card">
     <div class="check-icon">✅</div>
-    <h1>¡Kit en camino!</h1>
+    <h1>¡Descarga lista!</h1>
     <p class="sub">
-      Te enviamos el kit a tu correo. Revisa tu bandeja en los próximos 5 minutos — si no llega, revisa la carpeta de <strong>spam</strong>.
+      Tu kit se está descargando automáticamente. Si no inicia, haz clic abajo.
     </p>
+    <a href="Kit_AutomatizaMX_10_Prompts.pdf" download
+       style="display:inline-block;margin-bottom:20px;padding:12px 28px;background:var(--navy);color:#fff;border-radius:10px;font-weight:700;text-decoration:none;font-size:0.95rem;">
+      Descargar Kit (PDF) →
+    </a>
 
     <div class="divider"></div>
 
