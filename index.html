@@ -3,489 +3,988 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Automatiza MX — Kit Gratis para Emprendedores</title>
-  <meta name="description" content="Descarga gratis el Kit de Automatización con Claude para Emprendedores MX. 10 prompts probados, plantillas TikTok Shop y guía de herramientas sin inversión." />
+  <title>Kit de Automatización con Claude — Para Vendedores en México</title>
+  <meta name="description" content="Descarga gratis el kit exacto que usan los mejores vendedores de TikTok Shop MX para investigar productos y crear contenido con IA en 20 minutos al día." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
 
-  <!-- Favicon placeholder -->
   <style>
+    /* ───── TOKENS ───── */
     :root {
-      --morado: #7C3AED;
-      --morado-claro: #A78BFA;
-      --morado-dark: #5B21B6;
-      --negro: #0F0F0F;
-      --gris-oscuro: #1A1A2E;
-      --gris-medio: #374151;
-      --gris-claro: #9CA3AF;
-      --blanco: #FFFFFF;
-      --acento: #F59E0B;
+      --navy:    #0F1F3D;
+      --navy2:   #1A3260;
+      --blue:    #2563EB;
+      --blue-lt: #EFF6FF;
+      --amber:   #F59E0B;
+      --amber-d: #D97706;
+      --green:   #059669;
+      --green-lt:#ECFDF5;
+      --white:   #FFFFFF;
+      --gray-50: #F8FAFC;
+      --gray-100:#F1F5F9;
+      --gray-200:#E2E8F0;
+      --gray-400:#94A3B8;
+      --gray-600:#475569;
+      --gray-800:#1E293B;
+      --text:    #0F1F3D;
+      --radius:  12px;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-
+    /* ───── RESET ───── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
     body {
-      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-      background: var(--negro);
-      color: var(--blanco);
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: var(--white);
+      color: var(--text);
       line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
     }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
 
-    /* ── HEADER ── */
+    /* ───── HEADER ───── */
     header {
-      background: rgba(15,15,15,0.95);
-      border-bottom: 1px solid rgba(124,58,237,0.3);
-      padding: 16px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      background: rgba(255,255,255,0.97);
+      border-bottom: 1px solid var(--gray-200);
+      backdrop-filter: blur(8px);
+      padding: 0 24px;
+      height: 60px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      backdrop-filter: blur(10px);
     }
     .logo {
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: var(--morado-claro);
-      letter-spacing: -0.5px;
-    }
-    .logo span { color: var(--blanco); }
-    header nav a {
-      color: var(--gris-claro);
-      text-decoration: none;
-      font-size: 0.9rem;
-      margin-left: 24px;
-      transition: color 0.2s;
-    }
-    header nav a:hover { color: var(--blanco); }
-
-    /* ── HERO ── */
-    .hero {
-      max-width: 860px;
-      margin: 0 auto;
-      padding: 80px 24px 60px;
-      text-align: center;
-    }
-    .badge {
-      display: inline-block;
-      background: rgba(124,58,237,0.15);
-      border: 1px solid rgba(124,58,237,0.4);
-      color: var(--morado-claro);
-      font-size: 0.8rem;
-      font-weight: 600;
-      padding: 6px 16px;
-      border-radius: 99px;
-      margin-bottom: 24px;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-    h1 {
-      font-size: clamp(2rem, 5vw, 3.4rem);
+      font-size: 1.1rem;
       font-weight: 800;
-      line-height: 1.15;
-      margin-bottom: 20px;
-      letter-spacing: -1px;
+      color: var(--navy);
+      letter-spacing: -0.5px;
+      text-decoration: none;
     }
-    h1 .highlight {
-      background: linear-gradient(135deg, var(--morado-claro), var(--acento));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    .subtitle {
-      font-size: 1.2rem;
-      color: var(--gris-claro);
-      max-width: 600px;
-      margin: 0 auto 40px;
-    }
-
-    /* ── FORM ── */
-    .form-card {
-      background: rgba(26,26,46,0.8);
-      border: 1px solid rgba(124,58,237,0.3);
-      border-radius: 20px;
-      padding: 40px 36px;
-      max-width: 520px;
-      margin: 0 auto;
-    }
-    .form-card h2 {
-      font-size: 1.4rem;
+    .logo em { font-style: normal; color: var(--blue); }
+    .header-cta {
+      background: var(--amber);
+      color: var(--navy);
       font-weight: 700;
-      margin-bottom: 8px;
-    }
-    .form-card p {
-      color: var(--gris-claro);
-      font-size: 0.95rem;
-      margin-bottom: 28px;
-    }
-    .form-group {
-      margin-bottom: 16px;
-    }
-    .form-group label {
-      display: block;
       font-size: 0.85rem;
-      color: var(--gris-claro);
-      margin-bottom: 6px;
-      font-weight: 500;
+      padding: 8px 18px;
+      border-radius: 8px;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: background 0.2s;
     }
-    .form-group input {
-      width: 100%;
-      padding: 14px 16px;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.15);
-      border-radius: 10px;
-      color: var(--blanco);
-      font-size: 1rem;
-      outline: none;
-      transition: border-color 0.2s;
-    }
-    .form-group input:focus {
-      border-color: var(--morado);
-    }
-    .form-group input::placeholder { color: rgba(255,255,255,0.3); }
-    .btn-cta {
-      width: 100%;
-      padding: 16px;
-      background: linear-gradient(135deg, var(--morado), var(--morado-dark));
-      color: var(--blanco);
-      font-size: 1.05rem;
-      font-weight: 700;
-      border: none;
-      border-radius: 12px;
-      cursor: pointer;
-      transition: opacity 0.2s, transform 0.1s;
-      margin-top: 8px;
+    .header-cta:hover { background: var(--amber-d); }
+
+    /* ───── URGENCY BAR ───── */
+    .urgency-bar {
+      background: var(--navy);
+      color: var(--white);
+      text-align: center;
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 9px 16px;
       letter-spacing: 0.01em;
     }
-    .btn-cta:hover { opacity: 0.9; transform: translateY(-1px); }
-    .btn-cta:active { transform: translateY(0); }
-    .privacy-note {
+    .urgency-bar span { color: var(--amber); }
+
+    /* ───── HERO ───── */
+    .hero {
+      background: var(--gray-50);
+      border-bottom: 1px solid var(--gray-200);
+      padding: 64px 24px 72px;
+    }
+    .hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 64px;
+      align-items: center;
+    }
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--blue-lt);
+      color: var(--blue);
       font-size: 0.78rem;
-      color: rgba(255,255,255,0.3);
-      margin-top: 14px;
-      text-align: center;
-    }
-
-    /* ── QUÉ INCLUYE ── */
-    .what-section {
-      max-width: 900px;
-      margin: 80px auto;
-      padding: 0 24px;
-    }
-    .section-label {
-      font-size: 0.8rem;
       font-weight: 700;
-      color: var(--morado-claro);
+      padding: 5px 12px;
+      border-radius: 99px;
+      margin-bottom: 20px;
       text-transform: uppercase;
-      letter-spacing: 0.1em;
-      margin-bottom: 12px;
+      letter-spacing: 0.06em;
     }
-    .what-section h2 {
-      font-size: clamp(1.6rem, 3vw, 2.4rem);
-      font-weight: 800;
-      margin-bottom: 48px;
-      letter-spacing: -0.5px;
+    .hero h1 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 900;
+      line-height: 1.12;
+      letter-spacing: -1.5px;
+      color: var(--navy);
+      margin-bottom: 20px;
     }
-    .kit-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
+    .hero h1 u {
+      text-decoration: none;
+      position: relative;
     }
-    .kit-item {
-      background: rgba(26,26,46,0.6);
-      border: 1px solid rgba(124,58,237,0.2);
-      border-radius: 16px;
-      padding: 28px 24px;
-      transition: border-color 0.2s;
+    .hero h1 u::after {
+      content: '';
+      position: absolute;
+      left: 0; bottom: 2px;
+      width: 100%; height: 6px;
+      background: var(--amber);
+      border-radius: 3px;
+      z-index: -1;
+      opacity: 0.6;
     }
-    .kit-item:hover { border-color: rgba(124,58,237,0.5); }
-    .kit-icon {
-      font-size: 2rem;
-      margin-bottom: 14px;
+    .hero-sub {
+      font-size: 1.1rem;
+      color: var(--gray-600);
+      max-width: 560px;
+      margin-bottom: 32px;
+      line-height: 1.65;
     }
-    .kit-item h3 {
-      font-size: 1.05rem;
-      font-weight: 700;
-      margin-bottom: 8px;
-    }
-    .kit-item p {
-      font-size: 0.9rem;
-      color: var(--gris-claro);
-      line-height: 1.5;
-    }
-
-    /* ── SOCIAL PROOF ── */
-    .proof-section {
-      background: rgba(124,58,237,0.06);
-      border-top: 1px solid rgba(124,58,237,0.15);
-      border-bottom: 1px solid rgba(124,58,237,0.15);
-      padding: 60px 24px;
-      text-align: center;
-    }
-    .proof-section h2 {
-      font-size: clamp(1.4rem, 2.5vw, 2rem);
-      font-weight: 800;
-      margin-bottom: 40px;
-    }
-    .stats-row {
+    .hero-bullets {
+      list-style: none;
       display: flex;
-      justify-content: center;
-      gap: 60px;
-      flex-wrap: wrap;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 0;
     }
-    .stat-item .number {
-      font-size: 2.8rem;
-      font-weight: 800;
-      color: var(--morado-claro);
-      line-height: 1;
+    .hero-bullets li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.95rem;
+      color: var(--gray-800);
+      font-weight: 500;
     }
-    .stat-item .label {
-      font-size: 0.9rem;
-      color: var(--gris-claro);
-      margin-top: 6px;
-    }
-
-    /* ── SOBRE MÍ ── */
-    .about-section {
-      max-width: 780px;
-      margin: 80px auto;
-      padding: 0 24px;
-      display: grid;
-      grid-template-columns: auto 1fr;
-      gap: 36px;
-      align-items: start;
-    }
-    .avatar {
-      width: 100px;
-      height: 100px;
+    .hero-bullets li::before {
+      content: '✓';
+      flex-shrink: 0;
+      width: 22px;
+      height: 22px;
+      background: var(--green);
+      color: white;
       border-radius: 50%;
-      background: linear-gradient(135deg, var(--morado), var(--morado-dark));
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 2.5rem;
-      flex-shrink: 0;
-    }
-    .about-text h2 {
-      font-size: 1.4rem;
-      font-weight: 700;
-      margin-bottom: 12px;
-    }
-    .about-text p {
-      color: var(--gris-claro);
-      line-height: 1.7;
-      font-size: 0.95rem;
-    }
-
-    /* ── SEGUNDA CTA ── */
-    .cta-bottom {
-      text-align: center;
-      padding: 80px 24px;
-      background: radial-gradient(ellipse at center, rgba(124,58,237,0.15) 0%, transparent 70%);
-    }
-    .cta-bottom h2 {
-      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-size: 0.7rem;
       font-weight: 800;
-      margin-bottom: 16px;
+      margin-top: 1px;
     }
-    .cta-bottom p {
-      color: var(--gris-claro);
-      margin-bottom: 36px;
-      font-size: 1.05rem;
+
+    /* ── FORM CARD ── */
+    .form-card {
+      background: var(--white);
+      border: 1.5px solid var(--gray-200);
+      border-radius: 20px;
+      padding: 36px 32px;
+      box-shadow: 0 20px 60px rgba(15,31,61,0.12), 0 4px 16px rgba(15,31,61,0.06);
     }
-    .btn-secondary {
-      display: inline-block;
-      padding: 16px 36px;
-      background: linear-gradient(135deg, var(--morado), var(--morado-dark));
-      color: var(--blanco);
-      font-size: 1.05rem;
+    .form-card-badge {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      background: var(--green-lt);
+      color: var(--green);
+      font-size: 0.78rem;
       font-weight: 700;
-      border-radius: 12px;
-      text-decoration: none;
-      transition: opacity 0.2s, transform 0.1s;
+      padding: 7px 14px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
     }
-    .btn-secondary:hover { opacity: 0.9; transform: translateY(-2px); }
-
-    /* ── FOOTER ── */
-    footer {
-      border-top: 1px solid rgba(255,255,255,0.07);
-      padding: 32px 24px;
+    .form-card h2 {
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: var(--navy);
       text-align: center;
-      color: rgba(255,255,255,0.3);
-      font-size: 0.85rem;
+      margin-bottom: 6px;
+      letter-spacing: -0.5px;
+      line-height: 1.25;
     }
-    footer a { color: rgba(255,255,255,0.4); text-decoration: none; }
-
-    /* ── SUCCESS STATE ── */
+    .form-card-sub {
+      text-align: center;
+      font-size: 0.88rem;
+      color: var(--gray-600);
+      margin-bottom: 24px;
+    }
+    .form-group { margin-bottom: 14px; }
+    .form-group label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--gray-800);
+      margin-bottom: 5px;
+    }
+    .form-group input {
+      width: 100%;
+      padding: 13px 14px;
+      border: 1.5px solid var(--gray-200);
+      border-radius: var(--radius);
+      font-size: 0.95rem;
+      font-family: inherit;
+      color: var(--text);
+      background: var(--white);
+      outline: none;
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+    .form-group input:focus {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(37,99,235,0.12);
+    }
+    .form-group input::placeholder { color: var(--gray-400); }
+    .btn-cta {
+      width: 100%;
+      padding: 16px;
+      background: var(--amber);
+      color: var(--navy);
+      font-size: 1rem;
+      font-weight: 800;
+      border: none;
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
+      letter-spacing: -0.2px;
+      margin-top: 4px;
+      box-shadow: 0 4px 14px rgba(245,158,11,0.35);
+    }
+    .btn-cta:hover {
+      background: var(--amber-d);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(245,158,11,0.4);
+    }
+    .btn-cta:active { transform: translateY(0); }
+    .form-trust {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      font-size: 0.75rem;
+      color: var(--gray-400);
+      margin-top: 12px;
+      text-align: center;
+    }
     .success-msg {
       display: none;
-      background: rgba(16,185,129,0.15);
-      border: 1px solid rgba(16,185,129,0.4);
-      border-radius: 12px;
+      background: var(--green-lt);
+      border: 1.5px solid rgba(5,150,105,0.25);
+      border-radius: var(--radius);
       padding: 20px;
       text-align: center;
-      color: #6EE7B7;
-      font-weight: 600;
+      color: var(--green);
+      font-weight: 700;
+      font-size: 1rem;
     }
 
-    @media (max-width: 600px) {
-      .about-section { grid-template-columns: 1fr; }
-      .stats-row { gap: 32px; }
-      header nav { display: none; }
+    /* ───── LOGOS BAR ───── */
+    .logos-bar {
+      padding: 28px 24px;
+      border-bottom: 1px solid var(--gray-200);
+      text-align: center;
+    }
+    .logos-bar p {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--gray-400);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 16px;
+    }
+    .logos-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 36px;
+      flex-wrap: wrap;
+    }
+    .logo-chip {
+      background: var(--gray-100);
+      border: 1px solid var(--gray-200);
+      border-radius: 8px;
+      padding: 8px 18px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--gray-600);
+      letter-spacing: 0.02em;
+    }
+
+    /* ───── PAIN SECTION ───── */
+    .pain-section {
+      background: var(--navy);
+      color: var(--white);
+      padding: 72px 24px;
+      text-align: center;
+    }
+    .pain-section h2 {
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 900;
+      letter-spacing: -1px;
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+    .pain-section h2 em {
+      font-style: normal;
+      color: var(--amber);
+    }
+    .pain-section > p {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.65);
+      max-width: 600px;
+      margin: 0 auto 48px;
+    }
+    .pain-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: left;
+    }
+    .pain-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: var(--radius);
+      padding: 24px 22px;
+    }
+    .pain-card .pain-icon {
+      font-size: 1.6rem;
+      margin-bottom: 12px;
+    }
+    .pain-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: var(--white);
+    }
+    .pain-card p {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.55;
+    }
+
+    /* ───── KIT SECTION ───── */
+    .kit-section {
+      padding: 80px 24px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .section-eyebrow {
+      font-size: 0.75rem;
+      font-weight: 800;
+      color: var(--blue);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 10px;
+    }
+    .kit-section h2 {
+      font-size: clamp(1.7rem, 3vw, 2.4rem);
+      font-weight: 900;
+      letter-spacing: -1px;
+      color: var(--navy);
+      margin-bottom: 8px;
+      line-height: 1.2;
+    }
+    .kit-section > p {
+      font-size: 1rem;
+      color: var(--gray-600);
+      margin-bottom: 48px;
+      max-width: 540px;
+    }
+    .kit-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+    }
+    .kit-item {
+      border: 1.5px solid var(--gray-200);
+      border-radius: 16px;
+      padding: 28px 26px;
+      background: var(--white);
+      transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+    }
+    .kit-item:hover {
+      border-color: var(--blue);
+      box-shadow: 0 8px 30px rgba(37,99,235,0.1);
+      transform: translateY(-2px);
+    }
+    .kit-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      background: var(--navy);
+      color: var(--white);
+      font-size: 0.8rem;
+      font-weight: 800;
+      border-radius: 8px;
+      margin-bottom: 16px;
+    }
+    .kit-item h3 {
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+    .kit-item p {
+      font-size: 0.88rem;
+      color: var(--gray-600);
+      line-height: 1.6;
+    }
+
+    /* ───── STATS ───── */
+    .stats-section {
+      background: var(--blue-lt);
+      border-top: 1px solid #DBEAFE;
+      border-bottom: 1px solid #DBEAFE;
+      padding: 56px 24px;
+    }
+    .stats-inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .stats-inner h2 {
+      text-align: center;
+      font-size: clamp(1.3rem, 2.5vw, 1.9rem);
+      font-weight: 900;
+      letter-spacing: -0.8px;
+      color: var(--navy);
+      margin-bottom: 40px;
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 32px;
+      text-align: center;
+    }
+    .stat-num {
+      font-size: 3rem;
+      font-weight: 900;
+      color: var(--blue);
+      line-height: 1;
+      letter-spacing: -2px;
+    }
+    .stat-label {
+      font-size: 0.88rem;
+      color: var(--gray-600);
+      margin-top: 6px;
+      line-height: 1.4;
+      font-weight: 500;
+    }
+
+    /* ───── STEPS ───── */
+    .steps-section {
+      padding: 80px 24px;
+      background: var(--gray-50);
+      border-top: 1px solid var(--gray-200);
+      border-bottom: 1px solid var(--gray-200);
+    }
+    .steps-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .steps-inner h2 {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 900;
+      letter-spacing: -1px;
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+    .steps-inner > p {
+      font-size: 1rem;
+      color: var(--gray-600);
+      margin-bottom: 48px;
+    }
+    .steps-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      text-align: left;
+    }
+    .step-row {
+      display: grid;
+      grid-template-columns: 56px 1fr;
+      gap: 24px;
+      align-items: start;
+      padding: 28px 0;
+      border-bottom: 1px solid var(--gray-200);
+    }
+    .step-row:last-child { border-bottom: none; }
+    .step-circle {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: var(--navy);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      font-weight: 900;
+      flex-shrink: 0;
+    }
+    .step-body h3 {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 6px;
+      padding-top: 12px;
+    }
+    .step-body p {
+      font-size: 0.9rem;
+      color: var(--gray-600);
+      line-height: 1.6;
+    }
+
+    /* ───── ABOUT ───── */
+    .about-section {
+      padding: 80px 24px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .about-inner {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 56px;
+      align-items: center;
+    }
+    .about-img-wrap {
+      position: relative;
+    }
+    .about-photo {
+      width: 100%;
+      border-radius: 16px;
+      background: linear-gradient(135deg, var(--navy), var(--navy2));
+      aspect-ratio: 4/5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 5rem;
+      color: rgba(255,255,255,0.15);
+      font-weight: 900;
+      letter-spacing: -3px;
+      overflow: hidden;
+    }
+    .about-badge {
+      position: absolute;
+      bottom: -14px;
+      right: -14px;
+      background: var(--amber);
+      color: var(--navy);
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 8px 14px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(245,158,11,0.35);
+      line-height: 1.3;
+      text-align: center;
+    }
+    .about-tag {
+      display: inline-block;
+      background: var(--blue-lt);
+      color: var(--blue);
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 16px;
+    }
+    .about-inner h2 {
+      font-size: clamp(1.6rem, 2.5vw, 2rem);
+      font-weight: 900;
+      letter-spacing: -0.8px;
+      color: var(--navy);
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+    .about-inner p {
+      font-size: 0.95rem;
+      color: var(--gray-600);
+      line-height: 1.75;
+      margin-bottom: 14px;
+    }
+    .cred-list {
+      list-style: none;
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .cred-list li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.9rem;
+      color: var(--gray-800);
+      font-weight: 500;
+    }
+    .cred-list li::before {
+      content: '→';
+      color: var(--blue);
+      font-weight: 700;
+    }
+
+    /* ───── FINAL CTA ───── */
+    .final-cta {
+      background: var(--navy);
+      color: var(--white);
+      padding: 80px 24px;
+      text-align: center;
+    }
+    .final-cta h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 900;
+      letter-spacing: -1.5px;
+      margin-bottom: 14px;
+      line-height: 1.15;
+    }
+    .final-cta h2 em {
+      font-style: normal;
+      color: var(--amber);
+    }
+    .final-cta p {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 36px;
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .btn-final {
+      display: inline-block;
+      background: var(--amber);
+      color: var(--navy);
+      font-size: 1.05rem;
+      font-weight: 800;
+      padding: 17px 40px;
+      border-radius: var(--radius);
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      box-shadow: 0 6px 24px rgba(245,158,11,0.4);
+      letter-spacing: -0.2px;
+    }
+    .btn-final:hover {
+      background: var(--amber-d);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(245,158,11,0.5);
+    }
+    .final-note {
+      margin-top: 16px;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.35);
+    }
+
+    /* ───── FOOTER ───── */
+    footer {
+      background: var(--gray-800);
+      color: rgba(255,255,255,0.4);
+      padding: 28px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 0.82rem;
+    }
+    footer a { color: rgba(255,255,255,0.5); text-decoration: none; }
+    footer a:hover { color: var(--white); }
+
+    /* ───── RESPONSIVE ───── */
+    @media (max-width: 800px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .about-inner {
+        grid-template-columns: 1fr;
+      }
+      .about-img-wrap {
+        max-width: 240px;
+        margin: 0 auto;
+      }
+      .kit-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    @media (max-width: 480px) {
+      .logos-row { gap: 12px; }
+      footer { justify-content: center; text-align: center; }
     }
   </style>
 </head>
 <body>
 
+  <!-- URGENCY BAR -->
+  <div class="urgency-bar">
+    📦 <span>Gratis esta semana</span> — Descarga el kit y empieza en 15 minutos
+  </div>
+
   <!-- HEADER -->
   <header>
-    <div class="logo">Automatiza<span>MX</span></div>
-    <nav>
-      <a href="#kit">El Kit</a>
-      <a href="#sobre-mi">Sobre mí</a>
-      <a href="https://www.youtube.com/@AutomatizaMX" target="_blank">YouTube</a>
-    </nav>
+    <a href="/" class="logo">Automatiza<em>MX</em></a>
+    <a href="#kit" class="header-cta">Descargar gratis →</a>
   </header>
 
   <!-- HERO -->
   <section class="hero">
-    <div class="badge">🎁 Descarga gratuita — sin tarjeta</div>
-    <h1>
-      Automatiza tu negocio con Claude<br>
-      <span class="highlight">sin gastar un peso en software</span>
-    </h1>
-    <p class="subtitle">
-      El kit exacto que uso para investigar productos, crear contenido y atender clientes
-      con IA — en menos de 20 minutos al día.
-    </p>
+    <div class="hero-inner">
 
-    <!-- FORM CARD -->
-    <div class="form-card" id="kit">
-      <h2>Descarga el Kit Gratis 🚀</h2>
-      <p>10 prompts probados + plantilla TikTok Shop + stack de herramientas gratis</p>
+      <!-- LEFT: Copy -->
+      <div class="hero-copy">
+        <div class="hero-tag">🇲🇽 Para vendedores en México</div>
+        <h1>
+          El sistema que usan<br>
+          los mejores vendedores<br>
+          de TikTok Shop MX<br>
+          para trabajar <u>menos</u>
+        </h1>
+        <p class="hero-sub">
+          Claude hace el trabajo de investigar productos, crear guiones y analizar competencia — tú solo validas y publicas. Gratis. Sin código. En 20 minutos al día.
+        </p>
+        <ul class="hero-bullets">
+          <li>Investiga tendencias en TikTok Shop antes que tu competencia</li>
+          <li>Crea guiones y contenido en minutos, no en horas</li>
+          <li>Sin pagar Kalodata, Minea ni ninguna herramienta paga</li>
+          <li>Probado con vendedores reales en México en 2026</li>
+        </ul>
+      </div>
 
-      <!-- Opción A: Formspree (reemplaza TU_FORM_ID con el que obtienes en formspree.io/new) -->
-      <form id="lead-form" action="https://formspree.io/f/TU_FORM_ID" method="POST">
-        <div class="form-group">
-          <label for="nombre">Tu nombre</label>
-          <input type="text" id="nombre" name="nombre" placeholder="Ej. Carlos Ramírez" required />
+      <!-- RIGHT: Form -->
+      <div id="kit">
+        <div class="form-card">
+          <div class="form-card-badge">
+            ✅ Descarga gratuita — sin tarjeta
+          </div>
+          <h2>Recibe el Kit de Automatización</h2>
+          <p class="form-card-sub">
+            10 prompts probados · plantilla TikTok · guía de herramientas gratis
+          </p>
+
+          <form id="lead-form" action="https://formspree.io/f/xzdwyyoj" method="POST">
+            <div class="form-group">
+              <label for="nombre">Tu nombre</label>
+              <input type="text" id="nombre" name="nombre" placeholder="Carlos Ramírez" required autocomplete="name" />
+            </div>
+            <div class="form-group">
+              <label for="email">Correo electrónico</label>
+              <input type="email" id="email" name="email" placeholder="carlos@correo.com" required autocomplete="email" />
+            </div>
+            <input type="hidden" name="_subject" value="Nuevo lead — Kit Automatiza MX" />
+            <button type="submit" class="btn-cta">
+              Quiero el Kit Gratis →
+            </button>
+            <p class="form-trust">🔒 Sin spam. Tu correo está 100% seguro.</p>
+          </form>
+
+          <div class="success-msg" id="success-msg">
+            ✅ ¡Listo! Revisa tu correo.<br>
+            <small style="font-weight:500;opacity:0.7">Si no llega en 5 min, revisa spam.</small>
+          </div>
         </div>
-        <div class="form-group">
-          <label for="email">Tu correo electrónico</label>
-          <input type="email" id="email" name="email" placeholder="tu@correo.com" required />
-        </div>
-        <input type="hidden" name="_subject" value="Nuevo lead — Kit Automatiza MX" />
-        <input type="hidden" name="_next" value="https://automatizamx.github.io/gracias" />
-        <button type="submit" class="btn-cta">
-          Quiero el Kit Gratis →
-        </button>
-        <p class="privacy-note">🔒 Sin spam. Tu correo está 100% seguro. Cancela cuando quieras.</p>
-      </form>
+      </div>
 
-      <div class="success-msg" id="success-msg">
-        ✅ ¡Listo! Revisa tu correo en los próximos 5 minutos.<br>
-        <small style="opacity:0.7; font-weight:400;">Si no llega, revisa spam.</small>
+    </div>
+  </section>
+
+  <!-- LOGOS / HERRAMIENTAS QUE SE USAN -->
+  <div class="logos-bar">
+    <p>Herramientas incluidas en el kit — todas 100% gratis</p>
+    <div class="logos-row">
+      <div class="logo-chip">Claude AI</div>
+      <div class="logo-chip">TikTok Shop</div>
+      <div class="logo-chip">CapCut</div>
+      <div class="logo-chip">Canva</div>
+      <div class="logo-chip">Google Sheets</div>
+      <div class="logo-chip">Make.com</div>
+    </div>
+  </div>
+
+  <!-- PAIN SECTION -->
+  <section class="pain-section">
+    <h2>¿Te suena <em>alguno</em> de estos problemas?</h2>
+    <p>Si vendes en TikTok Shop (o quieres empezar), estos obstáculos te están costando dinero cada día que pasa.</p>
+
+    <div class="pain-grid">
+      <div class="pain-card">
+        <div class="pain-icon">⏱️</div>
+        <h3>Pierdes horas buscando qué vender</h3>
+        <p>Pasas tiempo mirando videos de competidores sin saber si el producto tiene demanda real o ya está saturado.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">📹</div>
+        <h3>Crear contenido te consume el día</h3>
+        <p>Escribir guiones, grabar, editar y subir te toma todo el día — y el video termina con 200 vistas.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">💸</div>
+        <h3>Las herramientas pagas no caben en tu presupuesto</h3>
+        <p>Kalodata, Minea, herramientas de edición… todo cuesta y no tienes certeza de que valga la pena.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">😤</div>
+        <h3>La competencia publica más que tú</h3>
+        <p>Mientras tú produces un video, otros suben cinco. No es que trabajen más — tienen mejores sistemas.</p>
       </div>
     </div>
   </section>
 
-  <!-- QUÉ INCLUYE -->
-  <section class="what-section">
-    <div class="section-label">Lo que obtienes</div>
-    <h2>Todo lo que necesitas para empezar hoy</h2>
+  <!-- KIT SECTION -->
+  <section class="kit-section" id="contenido">
+    <div class="section-eyebrow">Lo que obtienes</div>
+    <h2>6 recursos para empezar mañana mismo</h2>
+    <p>Todo en un PDF que puedes abrir en tu teléfono y seguir paso a paso. Sin instalar nada, sin experiencia técnica.</p>
+
     <div class="kit-grid">
       <div class="kit-item">
-        <div class="kit-icon">⚡</div>
-        <h3>10 Prompts Probados</h3>
-        <p>Los prompts exactos que uso para investigar productos en TikTok Shop MX, escribir descripciones que venden y responder clientes automáticamente.</p>
+        <div class="kit-num">01</div>
+        <h3>10 Prompts Probados con Claude</h3>
+        <p>Los prompts exactos para investigar productos, escribir descripciones que venden, responder preguntas frecuentes y analizar competidores — en copia y pega.</p>
       </div>
       <div class="kit-item">
-        <div class="kit-icon">📱</div>
-        <h3>Plantilla TikTok Shop</h3>
-        <p>Guión de 60 segundos para videos de producto que generan clicks. Probado con vendedores reales en México. Solo llenas los espacios.</p>
+        <div class="kit-num">02</div>
+        <h3>Plantilla de Guión TikTok (60 seg)</h3>
+        <p>La estructura de video que funciona en TikTok Shop MX. Solo llena los datos de tu producto y tienes un guión en 3 minutos. Probado con videos reales.</p>
       </div>
       <div class="kit-item">
-        <div class="kit-icon">🔍</div>
-        <h3>Guía de Research de Productos</h3>
-        <p>Cómo encontrar productos con demanda real usando solo Claude y las herramientas gratuitas de TikTok. Sin gastar en Kalodata ni herramientas pagas.</p>
+        <div class="kit-num">03</div>
+        <h3>Guía de Research Sin Herramientas Pagas</h3>
+        <p>Cómo encontrar productos con demanda real usando TikTok Creative Center, Google Trends y MercadoLibre — todos gratis, combinados con Claude para analizar.</p>
       </div>
       <div class="kit-item">
-        <div class="kit-icon">🛠️</div>
-        <h3>Stack de Herramientas Gratis</h3>
-        <p>Las 8 herramientas que uso cada semana: Claude, CapCut, Canva, Make.com, Google Sheets, y 3 más — todas en su versión gratuita.</p>
+        <div class="kit-num">04</div>
+        <h3>Stack de 8 Herramientas Gratuitas</h3>
+        <p>Claude, CapCut, Canva, Make.com, Google Sheets, Formspree, GitHub Pages y TikTok Studio. Cómo usar cada una y para qué sirve exactamente.</p>
       </div>
       <div class="kit-item">
-        <div class="kit-icon">📊</div>
-        <h3>Tracker de Productos en Excel</h3>
-        <p>Hoja de cálculo para rastrear productos, precios, competidores y performance de tus videos. Actualizable con Claude en segundos.</p>
+        <div class="kit-num">05</div>
+        <h3>Tracker de Productos en Google Sheets</h3>
+        <p>La hoja de cálculo que uso para rastrear qué productos investigo, cuáles pruebo y cómo va el performance. Copiable en un click, actualizable con Claude.</p>
       </div>
       <div class="kit-item">
-        <div class="kit-icon">🎯</div>
-        <h3>Checklist de 7 Días</h3>
-        <p>Un plan día a día para tener tu primer video publicado y tu primer producto listado en TikTok Shop en menos de una semana.</p>
+        <div class="kit-num">06</div>
+        <h3>Plan de 7 Días para tu Primer Video</h3>
+        <p>Un checklist día por día para que en una semana tengas tu primer video publicado, tu primer producto listado y tu primer sistema automático funcionando.</p>
       </div>
     </div>
   </section>
 
-  <!-- SOCIAL PROOF -->
-  <section class="proof-section">
-    <h2>Resultados reales de vendedores MX</h2>
-    <div class="stats-row">
-      <div class="stat-item">
-        <div class="number">20 min</div>
-        <div class="label">Para hacer un video completo con Claude</div>
-      </div>
-      <div class="stat-item">
-        <div class="number">$0</div>
-        <div class="label">Inversión en software requerida</div>
-      </div>
-      <div class="stat-item">
-        <div class="number">10x</div>
-        <div class="label">Más rápido que hacerlo sin IA</div>
-      </div>
-      <div class="stat-item">
-        <div class="number">7 días</div>
-        <div class="label">Para tener tu primer video publicado</div>
+  <!-- STATS -->
+  <section class="stats-section">
+    <div class="stats-inner">
+      <h2>Números que importan para tu negocio</h2>
+      <div class="stats-grid">
+        <div>
+          <div class="stat-num">20 min</div>
+          <div class="stat-label">para hacer un video completo con Claude — desde cero</div>
+        </div>
+        <div>
+          <div class="stat-num">$0</div>
+          <div class="stat-label">en software o herramientas pagas requeridas</div>
+        </div>
+        <div>
+          <div class="stat-num">10x</div>
+          <div class="stat-label">más rápido que crear contenido sin IA</div>
+        </div>
+        <div>
+          <div class="stat-num">7 días</div>
+          <div class="stat-label">del kit descargado a primer video publicado</div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- SOBRE MÍ -->
+  <!-- STEPS -->
+  <section class="steps-section">
+    <div class="steps-inner">
+      <div class="section-eyebrow">Cómo funciona</div>
+      <h2>Tres pasos y ya estás produciendo</h2>
+      <p>No necesitas saber de tecnología ni tener experiencia con IA. Si sabes usar WhatsApp, puedes usar Claude.</p>
+
+      <div class="steps-list">
+        <div class="step-row">
+          <div class="step-circle">1</div>
+          <div class="step-body">
+            <h3>Descarga el kit y abre Claude.ai</h3>
+            <p>La versión gratuita de Claude es suficiente para empezar. Abre el kit en tu teléfono o computadora y sigue las instrucciones de la primera página.</p>
+          </div>
+        </div>
+        <div class="step-row">
+          <div class="step-circle">2</div>
+          <div class="step-body">
+            <h3>Usa el Prompt 1 con cualquier producto</h3>
+            <p>Copia el primer prompt del kit, pega el nombre del producto que quieres investigar y lee el análisis completo que Claude te entrega en segundos. Así de fácil.</p>
+          </div>
+        </div>
+        <div class="step-row">
+          <div class="step-circle">3</div>
+          <div class="step-body">
+            <h3>Produce tu primer video con la plantilla</h3>
+            <p>Toma la plantilla de guión del kit, llena los datos de tu producto (5 minutos) y usa CapCut para grabarlo. En 20 minutos tienes un video listo para subir.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
   <section class="about-section" id="sobre-mi">
-    <div class="avatar">🙋‍♂️</div>
-    <div class="about-text">
-      <h2>Hola, soy Stefano</h2>
-      <p>
-        Llevo años en ventas B2B para empresas de tecnología en México y LATAM. Cuando descubrí
-        Claude Code y las herramientas de IA, empecé a automatizar todo lo que podía: investigación
-        de productos, creación de contenido, seguimiento de clientes.
-      </p>
-      <p style="margin-top: 14px;">
-        Este canal lo creé para compartir exactamente cómo lo hago — sin términos técnicos,
-        sin inversión, solo resultados reales para emprendedores mexicanos.
-        Todo lo que enseño lo uso yo mismo.
-      </p>
+    <div class="about-inner">
+      <div class="about-img-wrap">
+        <div class="about-photo">S</div>
+        <div class="about-badge">
+          +8 años<br>ventas B2B<br>LATAM
+        </div>
+      </div>
+      <div>
+        <div class="about-tag">Quién está detrás</div>
+        <h2>Hola, soy Stefano — y esto no es un curso de gurú</h2>
+        <p>
+          Llevo más de 8 años en ventas B2B para empresas de tecnología en México y LATAM. Cuando empecé a usar Claude para automatizar mi propio trabajo, me di cuenta de que podía hacer en 20 minutos lo que antes me tomaba medio día.
+        </p>
+        <p>
+          Creé Automatiza MX para mostrar exactamente cómo funciona — sin promesas de hacerse rico, sin términos técnicos, sin gastar dinero en software. Solo sistemas que yo mismo uso todos los días.
+        </p>
+        <ul class="cred-list">
+          <li>Vendedor y operador real en TikTok Shop MX</li>
+          <li>Experiencia en ventas enterprise en empresas como Neeyamo y otras tech</li>
+          <li>Todo lo que enseño lo practico primero — nada teórico</li>
+        </ul>
+      </div>
     </div>
   </section>
 
-  <!-- CTA FINAL -->
-  <section class="cta-bottom">
-    <h2>¿Listo para automatizar tu negocio?</h2>
-    <p>Descarga el kit gratis y empieza hoy mismo. Sin tarjeta, sin trampa.</p>
-    <a href="#kit" class="btn-secondary">Quiero el Kit Gratis →</a>
+  <!-- FINAL CTA -->
+  <section class="final-cta">
+    <h2>¿Cuánto más vas a tardar<br>en <em>automatizar</em> tu negocio?</h2>
+    <p>El kit es gratis. Tomar la decisión tarda 30 segundos. Empezar a ver resultados: menos de una semana.</p>
+    <a href="#kit" class="btn-final">Descargar el Kit Gratis →</a>
+    <p class="final-note">Sin tarjeta · Sin spam · Sin compromisos</p>
   </section>
 
   <!-- FOOTER -->
   <footer>
-    <p>© 2026 Automatiza MX — Todos los derechos reservados</p>
-    <p style="margin-top: 8px;">
+    <span>© 2026 Automatiza MX</span>
+    <span>
       <a href="mailto:guerresistef@gmail.com">guerresistef@gmail.com</a>
       &nbsp;·&nbsp;
-      <a href="https://www.youtube.com/@AutomatizaMX" target="_blank">YouTube</a>
-    </p>
+      <a href="https://www.youtube.com/@AutomatizaMXOficial" target="_blank">YouTube @AutomatizaMXOficial</a>
+    </span>
   </footer>
 
   <script>
-    // Smooth scroll to form
+    // Smooth scroll
     document.querySelectorAll('a[href="#kit"]').forEach(function(a) {
       a.addEventListener('click', function(e) {
         e.preventDefault();
@@ -493,31 +992,26 @@
       });
     });
 
-    // Form submission feedback (for Formspree)
-    const form = document.getElementById('lead-form');
+    // Form submission
+    var form = document.getElementById('lead-form');
     form.addEventListener('submit', function(e) {
       e.preventDefault();
-      const btn = form.querySelector('.btn-cta');
+      var btn = form.querySelector('.btn-cta');
       btn.textContent = 'Enviando...';
       btn.disabled = true;
 
-      const data = new FormData(form);
       fetch(form.action, {
         method: 'POST',
-        body: data,
+        body: new FormData(form),
         headers: { 'Accept': 'application/json' }
       }).then(function(res) {
         if (res.ok) {
           form.style.display = 'none';
           document.getElementById('success-msg').style.display = 'block';
-          // Track conversion (si tienes Google Analytics)
-          if (typeof gtag !== 'undefined') {
-            gtag('event', 'lead_form_submit', { event_category: 'engagement' });
-          }
         } else {
           btn.textContent = 'Quiero el Kit Gratis →';
           btn.disabled = false;
-          alert('Hubo un error. Intenta de nuevo o escríbeme a guerresistef@gmail.com');
+          alert('Error al enviar. Escríbeme a guerresistef@gmail.com');
         }
       }).catch(function() {
         btn.textContent = 'Quiero el Kit Gratis →';
