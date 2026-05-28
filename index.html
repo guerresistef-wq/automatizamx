@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Automatiza MX — Kit Gratis para Emprendedores</title>
+  <meta name="description" content="Descarga gratis el Kit de Automatización con Claude para Emprendedores MX. 10 prompts probados, plantillas TikTok Shop y guía de herramientas sin inversión." />
+
+  <!-- Favicon placeholder -->
+  <style>
+    :root {
+      --morado: #7C3AED;
+      --morado-claro: #A78BFA;
+      --morado-dark: #5B21B6;
+      --negro: #0F0F0F;
+      --gris-oscuro: #1A1A2E;
+      --gris-medio: #374151;
+      --gris-claro: #9CA3AF;
+      --blanco: #FFFFFF;
+      --acento: #F59E0B;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: var(--negro);
+      color: var(--blanco);
+      line-height: 1.6;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: rgba(15,15,15,0.95);
+      border-bottom: 1px solid rgba(124,58,237,0.3);
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(10px);
+    }
+    .logo {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--morado-claro);
+      letter-spacing: -0.5px;
+    }
+    .logo span { color: var(--blanco); }
+    header nav a {
+      color: var(--gris-claro);
+      text-decoration: none;
+      font-size: 0.9rem;
+      margin-left: 24px;
+      transition: color 0.2s;
+    }
+    header nav a:hover { color: var(--blanco); }
+
+    /* ── HERO ── */
+    .hero {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 80px 24px 60px;
+      text-align: center;
+    }
+    .badge {
+      display: inline-block;
+      background: rgba(124,58,237,0.15);
+      border: 1px solid rgba(124,58,237,0.4);
+      color: var(--morado-claro);
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 6px 16px;
+      border-radius: 99px;
+      margin-bottom: 24px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    h1 {
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 20px;
+      letter-spacing: -1px;
+    }
+    h1 .highlight {
+      background: linear-gradient(135deg, var(--morado-claro), var(--acento));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .subtitle {
+      font-size: 1.2rem;
+      color: var(--gris-claro);
+      max-width: 600px;
+      margin: 0 auto 40px;
+    }
+
+    /* ── FORM ── */
+    .form-card {
+      background: rgba(26,26,46,0.8);
+      border: 1px solid rgba(124,58,237,0.3);
+      border-radius: 20px;
+      padding: 40px 36px;
+      max-width: 520px;
+      margin: 0 auto;
+    }
+    .form-card h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .form-card p {
+      color: var(--gris-claro);
+      font-size: 0.95rem;
+      margin-bottom: 28px;
+    }
+    .form-group {
+      margin-bottom: 16px;
+    }
+    .form-group label {
+      display: block;
+      font-size: 0.85rem;
+      color: var(--gris-claro);
+      margin-bottom: 6px;
+      font-weight: 500;
+    }
+    .form-group input {
+      width: 100%;
+      padding: 14px 16px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 10px;
+      color: var(--blanco);
+      font-size: 1rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .form-group input:focus {
+      border-color: var(--morado);
+    }
+    .form-group input::placeholder { color: rgba(255,255,255,0.3); }
+    .btn-cta {
+      width: 100%;
+      padding: 16px;
+      background: linear-gradient(135deg, var(--morado), var(--morado-dark));
+      color: var(--blanco);
+      font-size: 1.05rem;
+      font-weight: 700;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: opacity 0.2s, transform 0.1s;
+      margin-top: 8px;
+      letter-spacing: 0.01em;
+    }
+    .btn-cta:hover { opacity: 0.9; transform: translateY(-1px); }
+    .btn-cta:active { transform: translateY(0); }
+    .privacy-note {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.3);
+      margin-top: 14px;
+      text-align: center;
+    }
+
+    /* ── QUÉ INCLUYE ── */
+    .what-section {
+      max-width: 900px;
+      margin: 80px auto;
+      padding: 0 24px;
+    }
+    .section-label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--morado-claro);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 12px;
+    }
+    .what-section h2 {
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 800;
+      margin-bottom: 48px;
+      letter-spacing: -0.5px;
+    }
+    .kit-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+    .kit-item {
+      background: rgba(26,26,46,0.6);
+      border: 1px solid rgba(124,58,237,0.2);
+      border-radius: 16px;
+      padding: 28px 24px;
+      transition: border-color 0.2s;
+    }
+    .kit-item:hover { border-color: rgba(124,58,237,0.5); }
+    .kit-icon {
+      font-size: 2rem;
+      margin-bottom: 14px;
+    }
+    .kit-item h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .kit-item p {
+      font-size: 0.9rem;
+      color: var(--gris-claro);
+      line-height: 1.5;
+    }
+
+    /* ── SOCIAL PROOF ── */
+    .proof-section {
+      background: rgba(124,58,237,0.06);
+      border-top: 1px solid rgba(124,58,237,0.15);
+      border-bottom: 1px solid rgba(124,58,237,0.15);
+      padding: 60px 24px;
+      text-align: center;
+    }
+    .proof-section h2 {
+      font-size: clamp(1.4rem, 2.5vw, 2rem);
+      font-weight: 800;
+      margin-bottom: 40px;
+    }
+    .stats-row {
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+      flex-wrap: wrap;
+    }
+    .stat-item .number {
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: var(--morado-claro);
+      line-height: 1;
+    }
+    .stat-item .label {
+      font-size: 0.9rem;
+      color: var(--gris-claro);
+      margin-top: 6px;
+    }
+
+    /* ── SOBRE MÍ ── */
+    .about-section {
+      max-width: 780px;
+      margin: 80px auto;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 36px;
+      align-items: start;
+    }
+    .avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--morado), var(--morado-dark));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+      flex-shrink: 0;
+    }
+    .about-text h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .about-text p {
+      color: var(--gris-claro);
+      line-height: 1.7;
+      font-size: 0.95rem;
+    }
+
+    /* ── SEGUNDA CTA ── */
+    .cta-bottom {
+      text-align: center;
+      padding: 80px 24px;
+      background: radial-gradient(ellipse at center, rgba(124,58,237,0.15) 0%, transparent 70%);
+    }
+    .cta-bottom h2 {
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+    .cta-bottom p {
+      color: var(--gris-claro);
+      margin-bottom: 36px;
+      font-size: 1.05rem;
+    }
+    .btn-secondary {
+      display: inline-block;
+      padding: 16px 36px;
+      background: linear-gradient(135deg, var(--morado), var(--morado-dark));
+      color: var(--blanco);
+      font-size: 1.05rem;
+      font-weight: 700;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: opacity 0.2s, transform 0.1s;
+    }
+    .btn-secondary:hover { opacity: 0.9; transform: translateY(-2px); }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid rgba(255,255,255,0.07);
+      padding: 32px 24px;
+      text-align: center;
+      color: rgba(255,255,255,0.3);
+      font-size: 0.85rem;
+    }
+    footer a { color: rgba(255,255,255,0.4); text-decoration: none; }
+
+    /* ── SUCCESS STATE ── */
+    .success-msg {
+      display: none;
+      background: rgba(16,185,129,0.15);
+      border: 1px solid rgba(16,185,129,0.4);
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      color: #6EE7B7;
+      font-weight: 600;
+    }
+
+    @media (max-width: 600px) {
+      .about-section { grid-template-columns: 1fr; }
+      .stats-row { gap: 32px; }
+      header nav { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">Automatiza<span>MX</span></div>
+    <nav>
+      <a href="#kit">El Kit</a>
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="https://www.youtube.com/@AutomatizaMX" target="_blank">YouTube</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="badge">🎁 Descarga gratuita — sin tarjeta</div>
+    <h1>
+      Automatiza tu negocio con Claude<br>
+      <span class="highlight">sin gastar un peso en software</span>
+    </h1>
+    <p class="subtitle">
+      El kit exacto que uso para investigar productos, crear contenido y atender clientes
+      con IA — en menos de 20 minutos al día.
+    </p>
+
+    <!-- FORM CARD -->
+    <div class="form-card" id="kit">
+      <h2>Descarga el Kit Gratis 🚀</h2>
+      <p>10 prompts probados + plantilla TikTok Shop + stack de herramientas gratis</p>
+
+      <!-- Opción A: Formspree (reemplaza TU_FORM_ID con el que obtienes en formspree.io/new) -->
+      <form id="lead-form" action="https://formspree.io/f/TU_FORM_ID" method="POST">
+        <div class="form-group">
+          <label for="nombre">Tu nombre</label>
+          <input type="text" id="nombre" name="nombre" placeholder="Ej. Carlos Ramírez" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Tu correo electrónico</label>
+          <input type="email" id="email" name="email" placeholder="tu@correo.com" required />
+        </div>
+        <input type="hidden" name="_subject" value="Nuevo lead — Kit Automatiza MX" />
+        <input type="hidden" name="_next" value="https://automatizamx.github.io/gracias" />
+        <button type="submit" class="btn-cta">
+          Quiero el Kit Gratis →
+        </button>
+        <p class="privacy-note">🔒 Sin spam. Tu correo está 100% seguro. Cancela cuando quieras.</p>
+      </form>
+
+      <div class="success-msg" id="success-msg">
+        ✅ ¡Listo! Revisa tu correo en los próximos 5 minutos.<br>
+        <small style="opacity:0.7; font-weight:400;">Si no llega, revisa spam.</small>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUÉ INCLUYE -->
+  <section class="what-section">
+    <div class="section-label">Lo que obtienes</div>
+    <h2>Todo lo que necesitas para empezar hoy</h2>
+    <div class="kit-grid">
+      <div class="kit-item">
+        <div class="kit-icon">⚡</div>
+        <h3>10 Prompts Probados</h3>
+        <p>Los prompts exactos que uso para investigar productos en TikTok Shop MX, escribir descripciones que venden y responder clientes automáticamente.</p>
+      </div>
+      <div class="kit-item">
+        <div class="kit-icon">📱</div>
+        <h3>Plantilla TikTok Shop</h3>
+        <p>Guión de 60 segundos para videos de producto que generan clicks. Probado con vendedores reales en México. Solo llenas los espacios.</p>
+      </div>
+      <div class="kit-item">
+        <div class="kit-icon">🔍</div>
+        <h3>Guía de Research de Productos</h3>
+        <p>Cómo encontrar productos con demanda real usando solo Claude y las herramientas gratuitas de TikTok. Sin gastar en Kalodata ni herramientas pagas.</p>
+      </div>
+      <div class="kit-item">
+        <div class="kit-icon">🛠️</div>
+        <h3>Stack de Herramientas Gratis</h3>
+        <p>Las 8 herramientas que uso cada semana: Claude, CapCut, Canva, Make.com, Google Sheets, y 3 más — todas en su versión gratuita.</p>
+      </div>
+      <div class="kit-item">
+        <div class="kit-icon">📊</div>
+        <h3>Tracker de Productos en Excel</h3>
+        <p>Hoja de cálculo para rastrear productos, precios, competidores y performance de tus videos. Actualizable con Claude en segundos.</p>
+      </div>
+      <div class="kit-item">
+        <div class="kit-icon">🎯</div>
+        <h3>Checklist de 7 Días</h3>
+        <p>Un plan día a día para tener tu primer video publicado y tu primer producto listado en TikTok Shop en menos de una semana.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOCIAL PROOF -->
+  <section class="proof-section">
+    <h2>Resultados reales de vendedores MX</h2>
+    <div class="stats-row">
+      <div class="stat-item">
+        <div class="number">20 min</div>
+        <div class="label">Para hacer un video completo con Claude</div>
+      </div>
+      <div class="stat-item">
+        <div class="number">$0</div>
+        <div class="label">Inversión en software requerida</div>
+      </div>
+      <div class="stat-item">
+        <div class="number">10x</div>
+        <div class="label">Más rápido que hacerlo sin IA</div>
+      </div>
+      <div class="stat-item">
+        <div class="number">7 días</div>
+        <div class="label">Para tener tu primer video publicado</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE MÍ -->
+  <section class="about-section" id="sobre-mi">
+    <div class="avatar">🙋‍♂️</div>
+    <div class="about-text">
+      <h2>Hola, soy Stefano</h2>
+      <p>
+        Llevo años en ventas B2B para empresas de tecnología en México y LATAM. Cuando descubrí
+        Claude Code y las herramientas de IA, empecé a automatizar todo lo que podía: investigación
+        de productos, creación de contenido, seguimiento de clientes.
+      </p>
+      <p style="margin-top: 14px;">
+        Este canal lo creé para compartir exactamente cómo lo hago — sin términos técnicos,
+        sin inversión, solo resultados reales para emprendedores mexicanos.
+        Todo lo que enseño lo uso yo mismo.
+      </p>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="cta-bottom">
+    <h2>¿Listo para automatizar tu negocio?</h2>
+    <p>Descarga el kit gratis y empieza hoy mismo. Sin tarjeta, sin trampa.</p>
+    <a href="#kit" class="btn-secondary">Quiero el Kit Gratis →</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Automatiza MX — Todos los derechos reservados</p>
+    <p style="margin-top: 8px;">
+      <a href="mailto:guerresistef@gmail.com">guerresistef@gmail.com</a>
+      &nbsp;·&nbsp;
+      <a href="https://www.youtube.com/@AutomatizaMX" target="_blank">YouTube</a>
+    </p>
+  </footer>
+
+  <script>
+    // Smooth scroll to form
+    document.querySelectorAll('a[href="#kit"]').forEach(function(a) {
+      a.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector('#kit').scrollIntoView({ behavior: 'smooth', block: 'center' });
+      });
+    });
+
+    // Form submission feedback (for Formspree)
+    const form = document.getElementById('lead-form');
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const btn = form.querySelector('.btn-cta');
+      btn.textContent = 'Enviando...';
+      btn.disabled = true;
+
+      const data = new FormData(form);
+      fetch(form.action, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      }).then(function(res) {
+        if (res.ok) {
+          form.style.display = 'none';
+          document.getElementById('success-msg').style.display = 'block';
+          // Track conversion (si tienes Google Analytics)
+          if (typeof gtag !== 'undefined') {
+            gtag('event', 'lead_form_submit', { event_category: 'engagement' });
+          }
+        } else {
+          btn.textContent = 'Quiero el Kit Gratis →';
+          btn.disabled = false;
+          alert('Hubo un error. Intenta de nuevo o escríbeme a guerresistef@gmail.com');
+        }
+      }).catch(function() {
+        btn.textContent = 'Quiero el Kit Gratis →';
+        btn.disabled = false;
+        alert('Sin conexión. Intenta de nuevo.');
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>¡Gracias! — Automatiza MX</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: #0F0F0F;
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 24px;
+    }
+    .card {
+      max-width: 540px;
+      text-align: center;
+      background: rgba(26,26,46,0.8);
+      border: 1px solid rgba(124,58,237,0.3);
+      border-radius: 24px;
+      padding: 60px 40px;
+    }
+    .check { font-size: 4rem; margin-bottom: 24px; }
+    h1 { font-size: 2rem; font-weight: 800; margin-bottom: 12px; letter-spacing: -0.5px; }
+    .sub { color: #9CA3AF; margin-bottom: 32px; line-height: 1.6; }
+    .steps { text-align: left; margin: 24px 0; }
+    .step {
+      display: flex; align-items: flex-start; gap: 16px;
+      margin-bottom: 16px; padding: 16px; background: rgba(124,58,237,0.08);
+      border-radius: 12px;
+    }
+    .step-num {
+      background: #7C3AED; color: #fff; width: 28px; height: 28px;
+      border-radius: 50%; display: flex; align-items: center;
+      justify-content: center; font-weight: 700; font-size: 0.85rem;
+      flex-shrink: 0;
+    }
+    .step-text { font-size: 0.95rem; color: #D1D5DB; line-height: 1.5; }
+    .step-text strong { color: #fff; }
+    .btn {
+      display: inline-block; margin-top: 24px; padding: 14px 32px;
+      background: linear-gradient(135deg, #7C3AED, #5B21B6);
+      color: #fff; font-weight: 700; border-radius: 12px;
+      text-decoration: none; font-size: 1rem;
+      transition: opacity 0.2s;
+    }
+    .btn:hover { opacity: 0.9; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="check">✅</div>
+    <h1>¡Listo, está en camino!</h1>
+    <p class="sub">
+      Revisa tu correo en los próximos 5 minutos.<br>
+      Si no llega, revisa la carpeta de spam — a veces se esconde ahí.
+    </p>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-text">
+          <strong>Abre el kit</strong> — Descarga el archivo y guárdalo en un lugar que encuentres fácil.
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-text">
+          <strong>Crea tu cuenta en Claude.ai</strong> — La versión gratuita es suficiente para empezar. El link está dentro del kit.
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-text">
+          <strong>Usa el Prompt 1 hoy</strong> — Investiga el primer producto que se te ocurra. En 5 minutos ya tienes tu primer análisis de mercado.
+        </div>
+      </div>
+    </div>
+
+    <a href="https://www.youtube.com/@AutomatizaMX" class="btn">
+      📺 Ver los tutoriales en YouTube
+    </a>
+  </div>
+</body>
+</html>
