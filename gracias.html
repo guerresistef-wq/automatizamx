@@ -4,86 +4,222 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>¡Gracias! — Automatiza MX</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <style>
+    :root {
+      --navy: #0F1F3D;
+      --blue: #2563EB;
+      --amber: #F59E0B;
+      --amber-d: #D97706;
+      --green: #059669;
+      --white: #FFFFFF;
+      --gray-100: #F1F5F9;
+      --gray-400: #94A3B8;
+      --gray-600: #475569;
+    }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: 'Segoe UI', system-ui, sans-serif;
-      background: #0F0F0F;
-      color: #FFFFFF;
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--gray-100);
+      color: var(--navy);
+      min-height: 100vh;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-      min-height: 100vh;
       padding: 24px;
     }
     .card {
-      max-width: 540px;
-      text-align: center;
-      background: rgba(26,26,46,0.8);
-      border: 1px solid rgba(124,58,237,0.3);
+      max-width: 580px;
+      width: 100%;
+      background: var(--white);
       border-radius: 24px;
-      padding: 60px 40px;
+      padding: 48px 40px;
+      box-shadow: 0 20px 60px rgba(15,31,61,0.12);
+      text-align: center;
     }
-    .check { font-size: 4rem; margin-bottom: 24px; }
-    h1 { font-size: 2rem; font-weight: 800; margin-bottom: 12px; letter-spacing: -0.5px; }
-    .sub { color: #9CA3AF; margin-bottom: 32px; line-height: 1.6; }
-    .steps { text-align: left; margin: 24px 0; }
+    .check-icon {
+      width: 72px;
+      height: 72px;
+      background: #ECFDF5;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      margin: 0 auto 24px;
+    }
+    h1 {
+      font-size: 1.9rem;
+      font-weight: 900;
+      letter-spacing: -0.8px;
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+    .sub {
+      font-size: 0.95rem;
+      color: var(--gray-600);
+      line-height: 1.65;
+      margin-bottom: 36px;
+    }
+    .divider {
+      height: 1px;
+      background: #E2E8F0;
+      margin: 0 0 28px;
+    }
+    .steps-label {
+      font-size: 0.72rem;
+      font-weight: 800;
+      color: var(--blue);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 16px;
+      text-align: left;
+    }
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 32px;
+      text-align: left;
+    }
     .step {
-      display: flex; align-items: flex-start; gap: 16px;
-      margin-bottom: 16px; padding: 16px; background: rgba(124,58,237,0.08);
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 16px 18px;
+      background: #F8FAFC;
       border-radius: 12px;
+      border: 1px solid #E2E8F0;
     }
     .step-num {
-      background: #7C3AED; color: #fff; width: 28px; height: 28px;
-      border-radius: 50%; display: flex; align-items: center;
-      justify-content: center; font-weight: 700; font-size: 0.85rem;
+      background: var(--navy);
+      color: var(--white);
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 0.8rem;
       flex-shrink: 0;
     }
-    .step-text { font-size: 0.95rem; color: #D1D5DB; line-height: 1.5; }
-    .step-text strong { color: #fff; }
-    .btn {
-      display: inline-block; margin-top: 24px; padding: 14px 32px;
-      background: linear-gradient(135deg, #7C3AED, #5B21B6);
-      color: #fff; font-weight: 700; border-radius: 12px;
-      text-decoration: none; font-size: 1rem;
+    .step-text {
+      font-size: 0.9rem;
+      color: var(--gray-600);
+      line-height: 1.5;
+    }
+    .step-text strong { color: var(--navy); }
+
+    .offer-box {
+      background: linear-gradient(135deg, var(--navy) 0%, #1A3260 100%);
+      border-radius: 16px;
+      padding: 28px 24px;
+      margin-bottom: 28px;
+      text-align: left;
+    }
+    .offer-box-tag {
+      font-size: 0.72rem;
+      font-weight: 800;
+      color: var(--amber);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 8px;
+    }
+    .offer-box h3 {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 6px;
+    }
+    .offer-box p {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.55;
+      margin-bottom: 18px;
+    }
+    .btn-amber {
+      display: block;
+      padding: 13px;
+      background: var(--amber);
+      color: var(--navy);
+      font-weight: 800;
+      font-size: 0.9rem;
+      border-radius: 10px;
+      text-decoration: none;
+      text-align: center;
+      transition: background 0.2s;
+    }
+    .btn-amber:hover { background: var(--amber-d); }
+
+    .btn-yt {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 28px;
+      background: var(--navy);
+      color: var(--white);
+      font-weight: 700;
+      font-size: 0.9rem;
+      border-radius: 10px;
+      text-decoration: none;
       transition: opacity 0.2s;
     }
-    .btn:hover { opacity: 0.9; }
+    .btn-yt:hover { opacity: 0.85; }
+    .note {
+      margin-top: 16px;
+      font-size: 0.78rem;
+      color: var(--gray-400);
+    }
   </style>
 </head>
 <body>
   <div class="card">
-    <div class="check">✅</div>
-    <h1>¡Listo, está en camino!</h1>
+    <div class="check-icon">✅</div>
+    <h1>¡Kit en camino!</h1>
     <p class="sub">
-      Revisa tu correo en los próximos 5 minutos.<br>
-      Si no llega, revisa la carpeta de spam — a veces se esconde ahí.
+      Te enviamos el kit a tu correo. Revisa tu bandeja en los próximos 5 minutos — si no llega, revisa la carpeta de <strong>spam</strong>.
     </p>
 
+    <div class="divider"></div>
+
+    <div class="steps-label">Tus próximos pasos</div>
     <div class="steps">
       <div class="step">
         <div class="step-num">1</div>
         <div class="step-text">
-          <strong>Abre el kit</strong> — Descarga el archivo y guárdalo en un lugar que encuentres fácil.
+          <strong>Abre el kit y guárdalo</strong> — Tenlo en tu teléfono para acceso rápido cuando investigues productos.
         </div>
       </div>
       <div class="step">
         <div class="step-num">2</div>
         <div class="step-text">
-          <strong>Crea tu cuenta en Claude.ai</strong> — La versión gratuita es suficiente para empezar. El link está dentro del kit.
+          <strong>Entra a Claude.ai</strong> — La versión gratuita es suficiente. El link está en la primera página del kit.
         </div>
       </div>
       <div class="step">
         <div class="step-num">3</div>
         <div class="step-text">
-          <strong>Usa el Prompt 1 hoy</strong> — Investiga el primer producto que se te ocurra. En 5 minutos ya tienes tu primer análisis de mercado.
+          <strong>Usa el Prompt 1 hoy mismo</strong> — Investiga cualquier producto. En 5 minutos tienes tu primer análisis real.
         </div>
       </div>
     </div>
 
-    <a href="https://www.youtube.com/@AutomatizaMX" class="btn">
-      📺 Ver los tutoriales en YouTube
+    <!-- UPSELL -->
+    <div class="offer-box">
+      <div class="offer-box-tag">🔥 Oferta exclusiva post-registro</div>
+      <h3>¿Quieres resultados en 48 horas?</h3>
+      <p>En una sesión 1:1 de 45 minutos configuro el sistema exactamente para tu nicho, te dejo los prompts listos y armamos tu primer guión en vivo.</p>
+      <a href="https://mpago.la/2XAvUkF" target="_blank" class="btn-amber">
+        Reservar sesión 1:1 — $599 MXN →
+      </a>
+    </div>
+
+    <a href="https://www.youtube.com/@AutomatizaMXOficial" target="_blank" class="btn-yt">
+      📺 Tutoriales en YouTube
     </a>
+    <p class="note">© 2026 Automatiza MX · <a href="mailto:guerresistef@gmail.com" style="color:inherit;">guerresistef@gmail.com</a></p>
   </div>
 </body>
 </html>

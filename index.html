@@ -636,6 +636,224 @@
       font-weight: 700;
     }
 
+    /* ───── VIDEO SECTION ───── */
+    .video-section {
+      padding: 72px 24px;
+      background: var(--white);
+      border-top: 1px solid var(--gray-200);
+      text-align: center;
+    }
+    .video-section h2 {
+      font-size: clamp(1.5rem, 2.5vw, 2rem);
+      font-weight: 900;
+      color: var(--navy);
+      letter-spacing: -0.8px;
+      margin-bottom: 10px;
+    }
+    .video-section > p {
+      font-size: 0.95rem;
+      color: var(--gray-600);
+      margin-bottom: 36px;
+    }
+    .video-wrap {
+      max-width: 780px;
+      margin: 0 auto;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(15,31,61,0.18);
+      aspect-ratio: 16/9;
+      background: var(--navy);
+    }
+    .video-wrap iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+
+    /* ───── PAID OFFER ───── */
+    .offer-section {
+      background: linear-gradient(135deg, var(--navy) 0%, #1A3260 100%);
+      padding: 80px 24px;
+      border-top: 4px solid var(--amber);
+    }
+    .offer-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .offer-inner .offer-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(245,158,11,0.15);
+      color: var(--amber);
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 5px 14px;
+      border-radius: 99px;
+      border: 1px solid rgba(245,158,11,0.3);
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    .offer-inner h2 {
+      font-size: clamp(1.7rem, 3vw, 2.5rem);
+      font-weight: 900;
+      color: var(--white);
+      letter-spacing: -1px;
+      margin-bottom: 10px;
+      line-height: 1.15;
+    }
+    .offer-inner h2 em {
+      font-style: normal;
+      color: var(--amber);
+    }
+    .offer-inner > p {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.6);
+      max-width: 540px;
+      margin: 0 auto 48px;
+    }
+    .offer-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+    .offer-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 20px;
+      padding: 36px 28px;
+      text-align: left;
+      transition: border-color 0.2s, background 0.2s;
+      position: relative;
+    }
+    .offer-card:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: rgba(245,158,11,0.4);
+    }
+    .offer-card.featured {
+      border-color: var(--amber);
+      background: rgba(245,158,11,0.08);
+    }
+    .offer-badge-best {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--amber);
+      color: var(--navy);
+      font-size: 0.7rem;
+      font-weight: 800;
+      padding: 4px 14px;
+      border-radius: 99px;
+      white-space: nowrap;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .offer-card-title {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+    .offer-card-desc {
+      font-size: 0.87rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    .offer-card-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 28px;
+    }
+    .offer-card-features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.8);
+    }
+    .offer-card-features li::before {
+      content: '✓';
+      color: var(--amber);
+      font-weight: 800;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .offer-price {
+      margin-bottom: 20px;
+    }
+    .offer-price .price-main {
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: var(--white);
+      letter-spacing: -1px;
+      line-height: 1;
+    }
+    .offer-price .price-main em {
+      font-style: normal;
+      font-size: 1rem;
+      color: rgba(255,255,255,0.5);
+      font-weight: 500;
+      letter-spacing: 0;
+    }
+    .offer-price .price-usd {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.4);
+      margin-top: 2px;
+    }
+    .btn-offer {
+      display: block;
+      width: 100%;
+      padding: 15px;
+      background: var(--amber);
+      color: var(--navy);
+      font-size: 0.95rem;
+      font-weight: 800;
+      border-radius: 10px;
+      text-decoration: none;
+      text-align: center;
+      transition: background 0.2s, transform 0.15s;
+      letter-spacing: -0.2px;
+    }
+    .btn-offer:hover {
+      background: var(--amber-d);
+      transform: translateY(-1px);
+    }
+    .btn-offer-outline {
+      display: block;
+      width: 100%;
+      padding: 15px;
+      background: transparent;
+      color: var(--white);
+      font-size: 0.95rem;
+      font-weight: 700;
+      border-radius: 10px;
+      text-decoration: none;
+      text-align: center;
+      border: 1.5px solid rgba(255,255,255,0.25);
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .btn-offer-outline:hover {
+      border-color: var(--amber);
+      background: rgba(245,158,11,0.08);
+    }
+    .offer-guarantee {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.4);
+      margin-top: 8px;
+    }
+
     /* ───── FINAL CTA ───── */
     .final-cta {
       background: var(--navy);
@@ -772,7 +990,7 @@
             10 prompts probados · plantilla TikTok · guía de herramientas gratis
           </p>
 
-          <form id="lead-form" action="https://formspree.io/f/xzdwyyoj" method="POST">
+          <form id="lead-form" action="https://formspree.io/f/xzdwyyoj" method="POST" data-redirect="https://guerresistef-wq.github.io/automatizamx/gracias.html">
             <div class="form-group">
               <label for="nombre">Tu nombre</label>
               <input type="text" id="nombre" name="nombre" placeholder="Carlos Ramírez" required autocomplete="name" />
@@ -965,6 +1183,77 @@
     </div>
   </section>
 
+  <!-- VIDEO SECTION -->
+  <section class="video-section">
+    <div class="section-eyebrow">Ve el sistema en acción</div>
+    <h2>3 horas de research → 8 minutos con Claude</h2>
+    <p>Mira cómo uso el sistema exactamente — desde el prompt hasta el video publicado.</p>
+    <div class="video-wrap">
+      <iframe
+        src="https://www.youtube.com/embed/1mBEcs4kzxs?rel=0&showinfo=0&color=white"
+        title="AutomatizaMX — Sistema Claude para TikTok Shop"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </section>
+
+  <!-- PAID OFFER -->
+  <section class="offer-section">
+    <div class="offer-inner">
+      <div class="offer-tag">🔥 Servicio Personalizado</div>
+      <h2>¿Prefieres que yo lo haga <em>contigo</em>?</h2>
+      <p>El kit es gratis y funciona solo. Pero si quieres resultados más rápidos, reserva una sesión y armamos todo juntos en tiempo real.</p>
+
+      <div class="offer-cards">
+
+        <!-- SESIÓN 1:1 -->
+        <div class="offer-card">
+          <div class="offer-card-title">⚡ Sesión Estratégica 1:1</div>
+          <div class="offer-card-desc">45 minutos por videollamada. Analizamos tu nicho, configuramos Claude para tu producto y sales con un sistema listo.</div>
+          <ul class="offer-card-features">
+            <li>Prompts personalizados para tu producto exacto</li>
+            <li>Análisis en vivo de tu competencia en TikTok Shop</li>
+            <li>Estructura del primer video que deberías hacer</li>
+            <li>Grabación de la sesión para que repitas el proceso</li>
+          </ul>
+          <div class="offer-price">
+            <div class="price-main">$599 <em>MXN</em></div>
+            <div class="price-usd">≈ $30 USD · pago único</div>
+          </div>
+          <a href="https://mpago.la/2XAvUkF" target="_blank" class="btn-offer-outline">Reservar sesión →</a>
+          <div class="offer-guarantee">🔒 Pago seguro vía Mercado Pago</div>
+        </div>
+
+        <!-- IMPLEMENTACIÓN COMPLETA -->
+        <div class="offer-card featured">
+          <div class="offer-badge-best">⭐ Más popular</div>
+          <div class="offer-card-title">🚀 Implementación Completa</div>
+          <div class="offer-card-desc">Dos sesiones + entregables. Salís con todo configurado, prompts listos y tu primer video publicado.</div>
+          <ul class="offer-card-features">
+            <li>Todo lo de la sesión básica x2</li>
+            <li>10 prompts personalizados escritos para tu nicho</li>
+            <li>Guión completo de tu primer video de TikTok</li>
+            <li>Tracker de productos configurado en Google Sheets</li>
+            <li>Plan de 30 días para escalar a 2+ videos por semana</li>
+            <li>Soporte por WhatsApp 7 días post-sesión</li>
+          </ul>
+          <div class="offer-price">
+            <div class="price-main">$1,999 <em>MXN</em></div>
+            <div class="price-usd">≈ $100 USD · pago único, sin mensualidades</div>
+          </div>
+          <a href="https://mpago.la/2XAvUkF" target="_blank" class="btn-offer">Contratar ahora →</a>
+          <div class="offer-guarantee">🔒 Pago seguro vía Mercado Pago</div>
+        </div>
+
+      </div>
+
+      <p style="font-size:0.82rem;color:rgba(255,255,255,0.3);margin-top:0;">
+        ¿Dudas? Escríbeme directo: <a href="mailto:guerresistef@gmail.com" style="color:var(--amber);text-decoration:none;">guerresistef@gmail.com</a>
+      </p>
+    </div>
+  </section>
+
   <!-- FINAL CTA -->
   <section class="final-cta">
     <h2>¿Cuánto más vas a tardar<br>en <em>automatizar</em> tu negocio?</h2>
@@ -1006,8 +1295,7 @@
         headers: { 'Accept': 'application/json' }
       }).then(function(res) {
         if (res.ok) {
-          form.style.display = 'none';
-          document.getElementById('success-msg').style.display = 'block';
+          window.location.href = 'https://guerresistef-wq.github.io/automatizamx/gracias.html';
         } else {
           btn.textContent = 'Quiero el Kit Gratis →';
           btn.disabled = false;
