@@ -919,6 +919,370 @@
     footer a { color: rgba(255,255,255,0.5); text-decoration: none; }
     footer a:hover { color: var(--white); }
 
+    /* ───── INSIDE KIT SECTION ───── */
+    .inside-section {
+      padding: 80px 24px;
+      background: var(--gray-50);
+      border-top: 1px solid var(--gray-200);
+    }
+    .inside-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .inside-inner h2 {
+      font-size: clamp(1.6rem, 2.8vw, 2.2rem);
+      font-weight: 900;
+      color: var(--navy);
+      letter-spacing: -0.8px;
+      margin-bottom: 10px;
+    }
+    .inside-inner > p {
+      font-size: 0.98rem;
+      color: var(--gray-600);
+      margin-bottom: 48px;
+    }
+    .inside-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 20px;
+      text-align: left;
+    }
+    .inside-card {
+      background: var(--white);
+      border: 1.5px solid var(--gray-200);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: box-shadow 0.2s, border-color 0.2s;
+    }
+    .inside-card:hover {
+      box-shadow: 0 12px 40px rgba(15,31,61,0.1);
+      border-color: var(--blue);
+    }
+    .inside-card-header {
+      background: var(--navy);
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .inside-card-header .dots {
+      display: flex;
+      gap: 5px;
+    }
+    .inside-card-header .dots span {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.2);
+    }
+    .inside-card-header .dots span:nth-child(1) { background: #FF5F57; }
+    .inside-card-header .dots span:nth-child(2) { background: #FEBC2E; }
+    .inside-card-header .dots span:nth-child(3) { background: #28C840; }
+    .inside-card-filename {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.5);
+      font-family: monospace;
+    }
+    .inside-card-body {
+      padding: 20px 18px;
+    }
+    .prompt-block {
+      background: var(--navy);
+      border-radius: 10px;
+      padding: 14px 16px;
+      margin-bottom: 14px;
+    }
+    .prompt-label {
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: var(--amber);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 8px;
+    }
+    .prompt-text {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.8);
+      line-height: 1.55;
+      font-family: monospace;
+    }
+    .prompt-response {
+      background: var(--blue-lt);
+      border-left: 3px solid var(--blue);
+      border-radius: 0 8px 8px 0;
+      padding: 12px 14px;
+    }
+    .prompt-response-label {
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: var(--blue);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 6px;
+    }
+    .prompt-response p {
+      font-size: 0.8rem;
+      color: var(--navy);
+      line-height: 1.55;
+    }
+    .sheet-row {
+      display: grid;
+      grid-template-columns: 1fr 60px 60px 80px;
+      gap: 2px;
+      margin-bottom: 2px;
+      font-size: 0.72rem;
+    }
+    .sheet-cell {
+      padding: 6px 8px;
+      background: var(--gray-50);
+      border: 1px solid var(--gray-200);
+      color: var(--gray-800);
+      border-radius: 2px;
+    }
+    .sheet-cell.header {
+      background: var(--navy);
+      color: var(--white);
+      font-weight: 700;
+    }
+    .sheet-cell.green { background: var(--green-lt); color: var(--green); font-weight: 600; }
+    .sheet-cell.amber { background: #FEF3C7; color: #92400E; font-weight: 600; }
+    .inside-card-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+    .inside-card-desc {
+      font-size: 0.82rem;
+      color: var(--gray-600);
+      line-height: 1.5;
+    }
+
+    /* ───── ANTES VS DESPUES ───── */
+    .avd-section {
+      padding: 80px 24px;
+      background: var(--white);
+      border-top: 1px solid var(--gray-200);
+    }
+    .avd-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .avd-inner h2 {
+      font-size: clamp(1.6rem, 2.8vw, 2.2rem);
+      font-weight: 900;
+      color: var(--navy);
+      letter-spacing: -0.8px;
+      margin-bottom: 10px;
+    }
+    .avd-inner > p {
+      font-size: 0.98rem;
+      color: var(--gray-600);
+      margin-bottom: 48px;
+    }
+    .avd-table {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border: 1.5px solid var(--gray-200);
+      border-radius: 16px;
+      overflow: hidden;
+      text-align: left;
+    }
+    .avd-col-header {
+      padding: 18px 24px;
+      font-size: 0.85rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .avd-col-header.sin {
+      background: #FEF2F2;
+      color: #991B1B;
+      border-bottom: 1.5px solid #FECACA;
+    }
+    .avd-col-header.con {
+      background: var(--green-lt);
+      color: var(--green);
+      border-bottom: 1.5px solid rgba(5,150,105,0.2);
+      border-left: 1.5px solid var(--gray-200);
+    }
+    .avd-row {
+      display: contents;
+    }
+    .avd-cell {
+      padding: 16px 24px;
+      font-size: 0.88rem;
+      line-height: 1.55;
+      border-bottom: 1px solid var(--gray-200);
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .avd-cell:last-of-type { border-bottom: none; }
+    .avd-cell.sin {
+      color: var(--gray-600);
+      background: #FAFAFA;
+    }
+    .avd-cell.sin::before { content: '✗'; color: #EF4444; font-weight: 800; flex-shrink: 0; margin-top: 1px; }
+    .avd-cell.con {
+      color: var(--gray-800);
+      background: var(--white);
+      border-left: 1.5px solid var(--gray-200);
+      font-weight: 500;
+    }
+    .avd-cell.con::before { content: '✓'; color: var(--green); font-weight: 800; flex-shrink: 0; margin-top: 1px; }
+
+    /* ───── FAQ ───── */
+    .faq-section {
+      padding: 80px 24px;
+      background: var(--gray-50);
+      border-top: 1px solid var(--gray-200);
+    }
+    .faq-inner {
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .faq-inner h2 {
+      font-size: clamp(1.5rem, 2.5vw, 2rem);
+      font-weight: 900;
+      color: var(--navy);
+      letter-spacing: -0.8px;
+      margin-bottom: 10px;
+    }
+    .faq-inner > p {
+      font-size: 0.95rem;
+      color: var(--gray-600);
+      margin-bottom: 40px;
+    }
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      text-align: left;
+    }
+    .faq-item {
+      background: var(--white);
+      border: 1.5px solid var(--gray-200);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .faq-q {
+      padding: 18px 20px;
+      font-size: 0.93rem;
+      font-weight: 700;
+      color: var(--navy);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      user-select: none;
+    }
+    .faq-q::after {
+      content: '+';
+      font-size: 1.3rem;
+      font-weight: 400;
+      color: var(--blue);
+      flex-shrink: 0;
+      transition: transform 0.2s;
+    }
+    .faq-item.open .faq-q::after { transform: rotate(45deg); }
+    .faq-a {
+      display: none;
+      padding: 0 20px 18px;
+      font-size: 0.88rem;
+      color: var(--gray-600);
+      line-height: 1.65;
+      border-top: 1px solid var(--gray-200);
+      padding-top: 16px;
+    }
+    .faq-item.open .faq-a { display: block; }
+
+    /* ───── EFFICIENCY STRIP ───── */
+    .efficiency-strip {
+      background: linear-gradient(135deg, #0F1F3D 0%, #1A3260 100%);
+      padding: 56px 24px;
+      border-top: 3px solid var(--amber);
+    }
+    .efficiency-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .efficiency-inner h2 {
+      font-size: clamp(1.5rem, 2.5vw, 2rem);
+      font-weight: 900;
+      color: var(--white);
+      letter-spacing: -0.8px;
+      margin-bottom: 8px;
+    }
+    .efficiency-inner h2 em {
+      font-style: normal;
+      color: var(--amber);
+    }
+    .efficiency-inner > p {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.55);
+      max-width: 600px;
+      margin: 0 auto 40px;
+    }
+    .efficiency-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+    }
+    .eff-chip {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 12px;
+      padding: 18px 16px;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.8);
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      text-align: left;
+    }
+    .eff-chip-icon {
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    /* ───── MOBILE STICKY CTA ───── */
+    .sticky-cta {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 500;
+      background: var(--white);
+      border-top: 1.5px solid var(--gray-200);
+      padding: 12px 16px;
+      box-shadow: 0 -4px 24px rgba(15,31,61,0.12);
+    }
+    .sticky-cta a {
+      display: block;
+      width: 100%;
+      text-align: center;
+      background: var(--amber);
+      color: var(--navy);
+      font-weight: 800;
+      font-size: 1rem;
+      padding: 14px;
+      border-radius: 10px;
+      text-decoration: none;
+      box-shadow: 0 4px 14px rgba(245,158,11,0.4);
+    }
+    @media (max-width: 640px) {
+      .sticky-cta { display: block; }
+      body { padding-bottom: 80px; }
+    }
+
     /* ───── RESPONSIVE ───── */
     @media (max-width: 800px) {
       .hero-inner {
@@ -935,10 +1299,23 @@
       .kit-grid {
         grid-template-columns: 1fr;
       }
+      .avd-table {
+        grid-template-columns: 1fr;
+      }
+      .avd-col-header.con,
+      .avd-cell.con {
+        border-left: none;
+        border-top: 1.5px solid var(--gray-200);
+      }
+      .inside-grid {
+        grid-template-columns: 1fr;
+      }
     }
     @media (max-width: 480px) {
       .logos-row { gap: 12px; }
       footer { justify-content: center; text-align: center; }
+      .sheet-row { grid-template-columns: 1fr 50px 50px; }
+      .sheet-row .sheet-cell:last-child { display: none; }
     }
   </style>
 </head>
@@ -961,21 +1338,20 @@
 
       <!-- LEFT: Copy -->
       <div class="hero-copy">
-        <div class="hero-tag">🇲🇽 Para vendedores en México</div>
+        <div class="hero-tag">🇲🇽 Para vendedores en TikTok Shop México · Gratis</div>
         <h1>
-          El sistema que usan<br>
-          los mejores vendedores<br>
-          de TikTok Shop MX<br>
-          para trabajar <u>menos</u>
+          Vende más en TikTok Shop<br>
+          con prompts cortos y<br>
+          sesiones de <u>20 minutos</u>
         </h1>
         <p class="hero-sub">
-          Claude hace el trabajo de investigar productos, crear guiones y analizar competencia — tú solo validas y publicas. Gratis. Sin código. En 20 minutos al día.
+          No IA ilimitada — IA <strong>bien usada</strong>. Claude investiga productos, crea guiones y analiza competidores en minutos. Tú solo validas y publicas. Sin herramientas pagas. Sin código.
         </p>
         <ul class="hero-bullets">
-          <li>Investiga tendencias en TikTok Shop antes que tu competencia</li>
-          <li>Crea guiones y contenido en minutos, no en horas</li>
+          <li>Prompts cortos y reutilizables — copia, pega y listo</li>
+          <li>Research de producto en 8 minutos, no 3 horas</li>
           <li>Sin pagar Kalodata, Minea ni ninguna herramienta paga</li>
-          <li>Probado con vendedores reales en México en 2026</li>
+          <li>Sistema real — no curso teórico. Empieza hoy mismo</li>
         </ul>
       </div>
 
@@ -1098,6 +1474,109 @@
     </div>
   </section>
 
+  <!-- ASÍ SE VE POR DENTRO -->
+  <section class="inside-section">
+    <div class="inside-inner">
+      <div class="section-eyebrow">Vista previa del kit</div>
+      <h2>Así se ve por dentro — sin sorpresas</h2>
+      <p>Antes de dar tu correo, mira exactamente qué recibes. Tres ejemplos reales del sistema.</p>
+
+      <div class="inside-grid">
+
+        <!-- Prompt real -->
+        <div class="inside-card">
+          <div class="inside-card-header">
+            <div class="dots"><span></span><span></span><span></span></div>
+            <div class="inside-card-filename">claude.ai — Prompt 1 de 10</div>
+          </div>
+          <div class="inside-card-body">
+            <div class="inside-card-label">📋 Prompt de investigación de producto</div>
+            <div class="inside-card-desc" style="margin-bottom:14px;">Copia este prompt, pega el nombre de tu producto y en segundos tienes un análisis completo.</div>
+            <div class="prompt-block">
+              <div class="prompt-label">Tú escribes:</div>
+              <div class="prompt-text">"Analiza [PRODUCTO] para TikTok Shop México. Dime: demanda real, tipo de comprador, problema que resuelve, objeciones principales y 3 ángulos de video para venderlo."</div>
+            </div>
+            <div class="prompt-response">
+              <div class="prompt-response-label">Claude responde en 10 segundos:</div>
+              <p>✅ Demanda alta — categoría hogar en crecimiento Q1 2026<br>🎯 Comprador: mujer 25-40, organización del hogar<br>💡 Problema: espacio limitado, caos visual<br>📹 Ángulo 1: transformación antes/después...</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Google Sheet tracker -->
+        <div class="inside-card">
+          <div class="inside-card-header">
+            <div class="dots"><span></span><span></span><span></span></div>
+            <div class="inside-card-filename">Tracker de Productos — Google Sheets</div>
+          </div>
+          <div class="inside-card-body">
+            <div class="inside-card-label">📊 Tracker de productos — copiable en 1 click</div>
+            <div class="inside-card-desc" style="margin-bottom:14px;">Registra qué productos investigas, cuáles tienes pendientes y cómo va cada uno.</div>
+            <div class="sheet-row">
+              <div class="sheet-cell header">Producto</div>
+              <div class="sheet-cell header">Demanda</div>
+              <div class="sheet-cell header">Estado</div>
+              <div class="sheet-cell header">Acción</div>
+            </div>
+            <div class="sheet-row">
+              <div class="sheet-cell">Organizador multiusos</div>
+              <div class="sheet-cell">Alta</div>
+              <div class="sheet-cell green">✓ Listo</div>
+              <div class="sheet-cell">Publicar</div>
+            </div>
+            <div class="sheet-row">
+              <div class="sheet-cell">Lámpara LED escritorio</div>
+              <div class="sheet-cell">Media</div>
+              <div class="sheet-cell amber">⏳ Prueba</div>
+              <div class="sheet-cell">Guión</div>
+            </div>
+            <div class="sheet-row">
+              <div class="sheet-cell">Portavasos magnético</div>
+              <div class="sheet-cell">Alta</div>
+              <div class="sheet-cell green">✓ Video</div>
+              <div class="sheet-cell">Publicado</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Guión TikTok -->
+        <div class="inside-card">
+          <div class="inside-card-header">
+            <div class="dots"><span></span><span></span><span></span></div>
+            <div class="inside-card-filename">Plantilla de Guión TikTok — 60 seg</div>
+          </div>
+          <div class="inside-card-body">
+            <div class="inside-card-label">🎬 Guión en 5 campos — rellena y graba</div>
+            <div class="inside-card-desc" style="margin-bottom:14px;">La estructura de video que funciona en TikTok Shop MX. Claude llena el 80%, tú ajustas en 2 minutos.</div>
+            <div style="display:flex;flex-direction:column;gap:8px;">
+              <div style="display:flex;gap:8px;align-items:flex-start;">
+                <div style="background:var(--amber);color:var(--navy);font-size:0.65rem;font-weight:800;padding:3px 8px;border-radius:4px;white-space:nowrap;margin-top:1px;">HOOK 0–3s</div>
+                <div style="font-size:0.8rem;color:var(--gray-800);">¿Buscas algo para organizar tu escritorio sin gastar de más?</div>
+              </div>
+              <div style="display:flex;gap:8px;align-items:flex-start;">
+                <div style="background:var(--blue);color:white;font-size:0.65rem;font-weight:800;padding:3px 8px;border-radius:4px;white-space:nowrap;margin-top:1px;">PROBLEMA</div>
+                <div style="font-size:0.8rem;color:var(--gray-800);">La mayoría de organizadores se ven bien pero no aguantan el uso diario...</div>
+              </div>
+              <div style="display:flex;gap:8px;align-items:flex-start;">
+                <div style="background:var(--green);color:white;font-size:0.65rem;font-weight:800;padding:3px 8px;border-radius:4px;white-space:nowrap;margin-top:1px;">DEMO</div>
+                <div style="font-size:0.8rem;color:var(--gray-800);">Mira lo que cabe: cables, plumas, audífonos y sigue en orden...</div>
+              </div>
+              <div style="display:flex;gap:8px;align-items:flex-start;">
+                <div style="background:var(--navy);color:white;font-size:0.65rem;font-weight:800;padding:3px 8px;border-radius:4px;white-space:nowrap;margin-top:1px;">CTA</div>
+                <div style="font-size:0.8rem;color:var(--gray-800);">Link directo en TikTok Shop — envío gratis esta semana →</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div style="margin-top:36px;">
+        <a href="#kit" class="btn-final" style="display:inline-block;font-size:0.95rem;padding:14px 32px;">Quiero el Kit Completo — Es Gratis →</a>
+      </div>
+    </div>
+  </section>
+
   <!-- STATS -->
   <section class="stats-section">
     <div class="stats-inner">
@@ -1118,6 +1597,76 @@
         <div>
           <div class="stat-num">7 días</div>
           <div class="stat-label">del kit descargado a primer video publicado</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ANTES VS DESPUÉS -->
+  <section class="avd-section">
+    <div class="avd-inner">
+      <div class="section-eyebrow">La diferencia real</div>
+      <h2>Vender sin sistema vs vender con AutomatizaMX</h2>
+      <p>No es magia. Es tener un flujo claro con prompts cortos que hacen el trabajo pesado.</p>
+
+      <div class="avd-table">
+        <div class="avd-col-header sin">❌ Sin AutomatizaMX</div>
+        <div class="avd-col-header con">✅ Con AutomatizaMX</div>
+
+        <div class="avd-cell sin">Pasas 2-3 horas buscando qué producto tiene demanda real</div>
+        <div class="avd-cell con">8 minutos con el Prompt 1 — análisis completo de demanda, comprador y ángulos de video</div>
+
+        <div class="avd-cell sin">Escribes guiones desde cero, sin saber si el hook va a funcionar</div>
+        <div class="avd-cell con">Plantilla de guión de 60 seg lista — hook + problema + demo + CTA en 5 minutos</div>
+
+        <div class="avd-cell sin">Pagas Kalodata, Minea u otras herramientas sin saber si valen la pena</div>
+        <div class="avd-cell con">Stack de 8 herramientas 100% gratuitas, incluyendo Claude versión free</div>
+
+        <div class="avd-cell sin">No sabes qué productos investigaste o por qué los descartaste</div>
+        <div class="avd-cell con">Tracker en Google Sheets — historial de cada producto, estado y siguiente acción</div>
+
+        <div class="avd-cell sin">Cada video parte de cero — mismo esfuerzo, resultados inconsistentes</div>
+        <div class="avd-cell con">Sistema reutilizable — cada prompt se usa para cualquier producto, sin empezar de cero</div>
+
+        <div class="avd-cell sin">Tardas semanas en publicar tu primer video bien hecho</div>
+        <div class="avd-cell con">Plan de 7 días — del kit descargado a primer video publicado en TikTok Shop</div>
+      </div>
+
+      <div style="margin-top:36px;">
+        <a href="#kit" class="btn-final" style="display:inline-block;font-size:0.95rem;padding:14px 32px;">Quiero el sistema — Descarga gratis →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- EFFICIENCY STRIP -->
+  <section class="efficiency-strip">
+    <div class="efficiency-inner">
+      <h2>No <em>IA ilimitada</em> — IA <em>bien usada</em></h2>
+      <p>El sistema está diseñado para sesiones cortas con prompts reutilizables. Sin conversaciones eternas, sin gastar tokens de más, sin configurar nada complicado.</p>
+      <div class="efficiency-grid">
+        <div class="eff-chip">
+          <div class="eff-chip-icon">⚡</div>
+          <div>Prompts cortos y directos — sin escribir párrafos para explicarle a Claude</div>
+        </div>
+        <div class="eff-chip">
+          <div class="eff-chip-icon">🔁</div>
+          <div>Plantillas reutilizables — un prompt funciona para cualquier producto</div>
+        </div>
+        <div class="eff-chip">
+          <div class="eff-chip-icon">📱</div>
+          <div>Funciona desde el celular — Claude free, sin apps extra ni instalaciones</div>
+        </div>
+        <div class="eff-chip">
+          <div class="eff-chip-icon">🎯</div>
+          <div>Resultados accionables en segundos — no análisis teóricos de 3 páginas</div>
+        </div>
+        <div class="eff-chip">
+          <div class="eff-chip-icon">🧩</div>
+          <div>Trabajo por bloques — producto → research → guión → video → publicación</div>
+        </div>
+        <div class="eff-chip">
+          <div class="eff-chip-icon">💡</div>
+          <div>Claude versión gratuita es suficiente — no necesitas pagar para empezar</div>
         </div>
       </div>
     </div>
@@ -1236,6 +1785,48 @@
     </div>
   </section>
 
+  <!-- FAQ -->
+  <section class="faq-section">
+    <div class="faq-inner">
+      <div class="section-eyebrow">Preguntas frecuentes</div>
+      <h2>Antes de descargar, aquí van las dudas más comunes</h2>
+      <p>Sin rodeos.</p>
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <div class="faq-q">¿Necesito saber de tecnología o de IA?</div>
+          <div class="faq-a">No. Si sabes usar WhatsApp o Google, puedes usar Claude. El kit incluye instrucciones paso a paso y los prompts ya están escritos — solo copy-paste.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">¿Tengo que pagar algo para usar el sistema?</div>
+          <div class="faq-a">El kit es 100% gratuito. Claude.ai tiene versión gratuita que es suficiente para empezar. Todas las herramientas del stack son gratis también. El único gasto opcional es el servicio de 3 videos con IA ($800 MXN) — y ese es separado, no obligatorio.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">¿Funciona si todavía no vendo en TikTok Shop?</div>
+          <div class="faq-a">Sí. El kit sirve para investigar productos antes de vender. De hecho, es mejor usarlo antes de comprometer inventario — así encuentras productos con demanda real.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">¿Tengo que grabar videos o aparecer en cámara?</div>
+          <div class="faq-a">No necesariamente. El sistema funciona con videos de pantalla, imágenes del producto y texto animado (CapCut gratis). Para los 3 videos del servicio pagado, yo genero todo — sin que tú grabes nada.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">¿Cuánto tiempo necesito al día para usar esto?</div>
+          <div class="faq-a">20 minutos al día es suficiente para empezar. El sistema está diseñado para sesiones cortas — un prompt por producto, un guión por video, sin conversaciones interminables con Claude.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">¿El kit se actualiza? ¿Qué pasa si los prompts ya no funcionan?</div>
+          <div class="faq-a">Los prompts están probados con Claude y funcionan con la versión actual. Cuando hay cambios relevantes, actualizo el kit y aviso por correo a quienes lo descargaron.</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- FINAL CTA -->
   <section class="final-cta">
     <h2>¿Cuánto más vas a tardar<br>en <em>automatizar</em> tu negocio?</h2>
@@ -1254,12 +1845,39 @@
     </span>
   </footer>
 
+  <!-- MOBILE STICKY CTA -->
+  <div class="sticky-cta" id="sticky-cta">
+    <a href="#kit">⚡ Descargar el Kit Gratis — Empieza Hoy →</a>
+  </div>
+
   <script>
+    // Hide sticky CTA when form is visible
+    var stickyEl = document.getElementById('sticky-cta');
+    var kitEl = document.getElementById('kit');
+    if (stickyEl && kitEl && window.innerWidth <= 640) {
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(e) {
+          stickyEl.style.display = e.isIntersecting ? 'none' : 'block';
+        });
+      }, { threshold: 0.1 });
+      observer.observe(kitEl);
+    }
+
     // Smooth scroll
     document.querySelectorAll('a[href="#kit"]').forEach(function(a) {
       a.addEventListener('click', function(e) {
         e.preventDefault();
         document.querySelector('#kit').scrollIntoView({ behavior: 'smooth', block: 'center' });
+      });
+    });
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-q').forEach(function(q) {
+      q.addEventListener('click', function() {
+        var item = this.parentElement;
+        var wasOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item.open').forEach(function(el) { el.classList.remove('open'); });
+        if (!wasOpen) item.classList.add('open');
       });
     });
 
