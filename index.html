@@ -656,13 +656,18 @@
       margin-bottom: 36px;
     }
     .video-wrap {
-      max-width: 780px;
+      max-width: 860px;
       margin: 0 auto;
       border-radius: 16px;
       overflow: hidden;
       box-shadow: 0 20px 60px rgba(15,31,61,0.18);
-      aspect-ratio: 16/9;
       background: var(--navy);
+      position: relative;
+    }
+    .video-wrap video {
+      width: 100%;
+      display: block;
+      border-radius: 16px;
     }
     .video-wrap iframe {
       width: 100%;
@@ -670,6 +675,23 @@
       border: none;
       display: block;
     }
+    .video-meta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+    .video-meta-chip {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.82rem;
+      color: var(--gray-600);
+      font-weight: 500;
+    }
+    .video-meta-chip strong { color: var(--navy); }
 
     /* ───── PAID OFFER ───── */
     .offer-section {
@@ -1736,14 +1758,22 @@
   <section class="video-section">
     <div class="section-eyebrow">Ve el sistema en acción</div>
     <h2>3 horas de research → 8 minutos con Claude</h2>
-    <p>Mira cómo uso el sistema exactamente — desde el prompt hasta el video publicado.</p>
+    <p>Mira exactamente cómo funciona el sistema — del prompt al video publicado.</p>
     <div class="video-wrap">
-      <iframe
-        src="https://www.youtube.com/embed/1mBEcs4kzxs?rel=0&showinfo=0&color=white"
-        title="AutomatizaMX — Sistema Claude para TikTok Shop"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen>
-      </iframe>
+      <video
+        controls
+        preload="metadata"
+        poster=""
+        playsinline
+        style="border-radius:16px;">
+        <source src="tutorial.mp4" type="video/mp4">
+        Tu navegador no soporta video HTML5.
+      </video>
+    </div>
+    <div class="video-meta">
+      <div class="video-meta-chip">⏱ <strong>75 seg</strong> — demo completo del sistema</div>
+      <div class="video-meta-chip">🆓 <strong>Gratis</strong> — sin herramientas pagas</div>
+      <div class="video-meta-chip">📱 <strong>Desde celular</strong> — Claude free es suficiente</div>
     </div>
   </section>
 
